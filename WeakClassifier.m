@@ -8,8 +8,8 @@ function C = WeakClassifier(T, P, X)
 % You are not allowed to use a loop in this function.
 % This is for your own benefit, since a loop will be too slow to use
 % with a reasonable amount of Haar features and training images.
-
-
+C = ones(length(X),1);
+C(P*X < P*T) = -1;
 
 end
 
