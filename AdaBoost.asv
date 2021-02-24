@@ -164,25 +164,21 @@ for k = N:-1:N-24
     subplot(5,5,i), imagesc(testImages(:,:,missclass(k)));
     axis image;
     axis off;
-    i = i+1;
+    i = i+1
 end
 
 
-figure(6);
+figure(5);
 colormap gray;
-for k = 1:25
-    subplot(5,5,k), imagesc(testImages(:,:,missclass(k)));
+i = 1;
+N = length(missclass);
+for k = N:-1:N-24
+    subplot(5,5,i), imagesc(testImages(:,:,missclass(k)));
     axis image;
     axis off;
+    i = i+1
 end
 
 %% Plot your choosen Haar-features
 %  Use the subplot command to make nice figures with multiple images.
 
-figure(7);
-colormap gray;
-for k = 1:25
-    subplot(5,5,k),imagesc(haarFeatureMasks(:,:,parameters(k,3)),[-1 2]);
-    axis image;
-    axis off;
-end
